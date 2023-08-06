@@ -49,7 +49,7 @@ class ImportJob < ApplicationJob
 
   def update_progress(amount, index = nil, total = nil)
     cable_ready['ImportChannel'].set_attribute(
-      selector: '#progress-bar>div',
+      selector: '#progress-bar',
       name: 'style',
       value: "width:#{amount}%"
     )
