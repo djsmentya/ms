@@ -8,7 +8,7 @@
 <% end %>
 
 <div class="row justify-content-md-center">
-  <div class="col col-5">
+  <div class="col col-12 col-md-6">
     <div class="card">
       <div class="card-header">
         Import Gmail messages
@@ -31,6 +31,80 @@
           <%= f.submit 'Import', class: 'btn btn-primary' %>
         <% end %>
       </div>
+    </div>
+  </div>
+
+  <div class="col col-12 col-md-6">
+    <div class="card h-100">
+      <div class="card-header">
+        Search your messages
+      </div>
+      <div class="container holder">
+        <div class="row justify-content-center align-items-center">
+          <a href="/a/message" class="btn btn-primary btn-lg"> Go to Messages</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="row">
+  <div class="col col-12">
+    <h1>Guides</h1>
+    <div class="accordion" id="help-accordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            How to get Gmail password?
+        </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#help-accordion">
+          <div class="accordion-body">
+            <p>
+              If your Gmail account has 2FA enabled, you will need to create an app password for the import to work.
+              <ul>
+                <li> Visit <a href="https://myaccount.google.com/signinoptions/two-step-verification">Two step verification</a> page of you Gmail account.</li>
+                <li> Click on <strong>App passwords</strong> section.</li>
+                <li> Select <strong>Mail</strong> as app and <strong>Other</strong> as device.</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseOne">
+            How to get run rspec tests?
+        </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#help-accordion">
+          <div class="accordion-body">
+            <p>
+            To execute test you need Gmail account credential. See <strong> How to get Gmail password?</strong> section.
+            </p>
+            <p>
+              <ul>
+                <li> Create <strong>.env</strong> file in root directory of the project.</li>
+                <li> Add following lines to the file.
+                  <br>
+                  <code> 
+                  GMAIL_EMAIL=your_gmail_email 
+                  <br>
+                  GMAIL_PASSWORD=your_gmail_password
+                  </code>
+                </li>
+                <li> Run <strong>rspec</strong> command in the terminal.</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+      
     </div>
   </div>
 </div>

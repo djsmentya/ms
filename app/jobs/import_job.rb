@@ -25,7 +25,8 @@ class ImportJob < ApplicationJob
       Message.create!(
         subject: message.subject,
         delivered_at: message.date,
-        sender: message.sender
+        sender: message.sender,
+        body: message.body.decoded
       )
     rescue Encoding::UndefinedConversionError => e
       Rails.logger.error(e)
