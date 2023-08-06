@@ -1,0 +1,36 @@
+<h1>Mail service Import</h1>
+<hr>
+
+<% if flash[:alert] %>
+  <div class="alert alert-danger">
+      <%= flash[:alert] %>
+  </div>
+<% end %>
+
+<div class="row justify-content-md-center">
+  <div class="col col-5">
+    <div class="card">
+      <div class="card-header">
+        Import Gmail messages
+      </div>
+      <div class="card-body">
+        <%=  form_for :import, url: '/import' do |f|%>
+          <div class="mb-3">
+            <%= f.label :email, class: 'form-label'%>
+            <%= f.text_field :email, class: 'form-control'%>
+          </div>
+          <div class="mb-3">
+            <%= f.label :password, class: 'form-label'%>
+            <%= f.password_field :password, class: 'form-control'%>
+          </div>
+          <div class="mb-3">
+            <%= f.label :limit, class: 'form-label'%>
+            <%= f.number_field :limit, class: 'form-control', min: 0, step: 1%>
+            <div class="form-text"> Zero(0) or emty value will process all messages</div>
+          </div>
+          <%= f.submit 'Import', class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

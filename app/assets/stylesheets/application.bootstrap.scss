@@ -1,2 +1,16 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+
+#progress-bar {
+  background-color: #ccc;
+  border-radius: 13px;
+  padding: 3px;
+}
+
+#progress-bar>div {
+  background-color: green;
+  width: 0;
+  height: 20px;
+  border-radius: 10px;
+}
+
